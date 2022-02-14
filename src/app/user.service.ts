@@ -17,11 +17,11 @@ private apiServerUrl = environment.apiBaseUrl;
   }
 
   public addUser(user : User):Observable<User> {
-    return this.http.post<User>(this.apiServerUrl + 'uasr/add', user);
+    return this.http.post<User>(this.apiServerUrl + 'user/add', user);
   }
 
 
   public deleteUser(id : number):Observable<void> {
-    return this.http.delete<void>(this.apiServerUrl + 'uasr/delete/' + id);
+    return this.http.delete<void>(this.apiServerUrl + 'user/delete/' + id);
   }
 }
