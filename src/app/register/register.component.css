@@ -349,3 +349,11 @@ header.sticky {
 .ad a:active {
   text-decoration: none;
 }
+
+.col-md-12 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 30em;
+}

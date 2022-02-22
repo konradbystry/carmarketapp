@@ -1,49 +1,29 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { User } from './user';
-import { Car } from './car';
-import { UserService } from './user.service';
-import { CarService } from './car.service';
-import { subscribeOn } from 'rxjs';
-
+import { Component } from '@angular/core';
+import { TokenStorageService } from './_services/token-storage.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  public users: User[] | undefined;
-
-  public cars: Car[] | undefined;
-
-  constructor(private userService:UserService, private carService:CarService){}
-
+export class AppComponent {
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username?: string;
+  constructor(private tokenStorageService: TokenStorageService) { }
   ngOnInit(): void {
-      this.getUsers();
-      this.getCars();
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.username = user.username;
+    }
   }
-
-  public getUsers():void {
-    this.userService.getUsers().subscribe(
-      (response:User[]) =>{
-        this.users=response;
-      },
-      (error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
-    )
+  logout(): void {
+    this.tokenStorageService.signOut();
+    window.location.reload();
   }
-
-  public getCars():void {
-    this.carService.getCars().subscribe(
-      (response:Car[]) =>{
-        this.cars=response;
-      },
-      (error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
-    )
-  }
-
-
 }

@@ -6,4 +6,8 @@ export interface Car{
   distance:string;
   engine:string;
   power:string;
+  imageUrl:string;
+  price:string;
+  phone:string;
+
 }

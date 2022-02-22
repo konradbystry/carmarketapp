@@ -1,0 +1,20 @@
+
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
+<div class="login">
+  <form #editForm="ngForm" class="pure-form pure-form-stacked">
+
+          <input type="text" ngModel="{{editCar?.brand}}" name='brand' placeholder="Brand" autocomplete="off"> <br>
+          <input type="text" ngModel="{{editCar?.model}}" name='model' placeholder="Model" autocomplete="off" > <br>
+          <input type="text" ngModel="{{editCar?.distance}}" name='distance' placeholder="Distance" autocomplete="off" > <br>
+          <input type="text" ngModel="{{editCar?.year}}" name='year' placeholder="Production Date" autocomplete="off"  > <br>
+          <input type="text" ngModel="{{editCar?.engine}}" name='engine' placeholder="Engine" autocomplete="off" > <br>
+          <input type="text" ngModel="{{editCar?.power}}" name='power' placeholder="Power" autocomplete="off" > <br>
+          <input type="text" ngModel="{{editCar?.price}}" name='price' placeholder="Price" autocomplete="off" > <br>
+          <input type="text" ngModel="{{editCar?.phone}}" name='phone' placeholder="Phone Number" autocomplete="off" > <br>
+
+          <label for="image">Image</label>
+          <input type="file" ngModel="{{editCar?.imageUrl}}" id="image_url" name='image_url'>
+          <button (click)="onEditCar(editForm.value)" type="submit"  id="add-form-close" class="pure-button pure-button-primary">Edit</button>
+  </form>
+</div>

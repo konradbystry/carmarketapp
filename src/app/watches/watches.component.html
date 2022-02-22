@@ -1,16 +1,4 @@
-<header class="sticky">
-  <a href="#" class="logo">Car Market</a>
-  <ul>
 
-      <li><a href="/watches">Watching</a></li>
-
-      <li><a href="/register">Register</a></li>
-
-      <li><a href="/login">Login</a></li>
-      <li><a href="#"></a></li>
-      <li><a href="/create"><button class=button>+ Start selling</button></a></li>
-  </ul>
-</header>
 
 
 <section class="ads">
@@ -113,6 +101,31 @@
 </a>
 </div>
 
+<div class="ad" *ngFor="let watch of watches">
+  <a href="/ad" class="text-decoration-none">
+      <div class="content">
+          <div class="photo">
+              <img src="{{watch.car.imageUrl}}" alt="">
+          </div>
+          <div class="description">
+              <h2>{{watch.car.brand}} {{watch.car.model}}</h2>
+              <ul>
+                  <li>{{watch.car.year}}</li>
+                  <li>{{watch.car.distance}} km</li>
+                  <li>{{watch.car.engine}}</li>
+              </ul>
+          </div>
+          <div class="price">
+              <h2>100000 pln</h2>
+
+              <form action="">
+                <button (click)="deleteWatches(watch.id)" class="remove-button">Remove</button>
+            </form>
+
+          </div>
+      </div>
+  </a>
+</div>
 
 
 

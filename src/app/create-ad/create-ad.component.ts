@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Car } from '../car';
+import { CarService } from '../_services/car.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-ad',
@@ -7,9 +12,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAdComponent implements OnInit {
 
-  constructor() { }
+  constructor(private carServie : CarService,  private tokenStorageService: TokenStorageService) { }
 
-  ngOnInit(): void {
+
+  ngOnInit(): void {}
+
+  public onAddCar(addForm: NgForm): void{
+
+    document.getElementById('add-form-close')?.click();
+
+    this.carServie.addCar(addForm.value).subscribe(
+      (response: Car) => {
+
+        console.log(response);
+        addForm.reset();
+       },
+      (error: HttpErrorResponse) => {
+
+        alert(error.message);
+        addForm.reset();
+      }
+    );
   }
 
 }

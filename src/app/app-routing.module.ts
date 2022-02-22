@@ -7,16 +7,19 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { EditComponent } from './edit/edit.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'watches', component: WatchesComponent},
-  {path: 'ad', component: AdComponent},
+  {path: 'ad/:id', component: AdComponent},
   {path: 'user', component: UserPanelComponent},
   {path: 'create', component: CreateAdComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'edit/:id', component: EditComponent}
 ];
 
 @NgModule({

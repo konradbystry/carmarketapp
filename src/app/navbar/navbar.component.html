@@ -1,0 +1,14 @@
+
+    <header class="sticky">
+      <a href="#" class="logo">Car Market</a>
+      <ul>
+
+          <li><a href="/watches">Watching</a></li>
+
+          <li><a href="/register" *ngIf="!isLoggedIn">Register</a></li>
+          <li><a href="/login" *ngIf="!isLoggedIn" routerLink="login" >Login</a></li>
+          <li><a href *ngIf="isLoggedIn" (click)="logout()">Logout</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="/create"><button class=button>+ Start selling</button></a></li>
+      </ul>
+  </header>

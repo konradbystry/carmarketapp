@@ -1,33 +1,21 @@
 
-    <header class="sticky">
-      <a href="#" class="logo">Car Market</a>
-      <ul>
-
-          <li><a href="/watches">Watching</a></li>
-
-          <li><a href="/register">Register</a></li>
-
-          <li><a href="/login">Login</a></li>
-          <li><a href="#"></a></li>
-          <li><a href="/create"><button class=button>+ Start selling</button></a></li>
-      </ul>
-  </header>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
 
 <div class="login">
-  <form class="pure-form pure-form-stacked" action="" method="POST" enctype="multipart/form-data">
+  <form class="pure-form pure-form-stacked" #addForm="ngForm" (ngSubmit)="onAddCar(addForm)">
 
-          <input type="text" id="brand" name='brand' placeholder="Brand" autocomplete="off"> <br>
-          <input type="text" id="model" name='model' placeholder="Model" autocomplete="off" > <br>
-          <input type="number" id="distance" name='distance' placeholder="Distance" autocomplete="off" > <br>
-          <input type="date" id="productionDate" name='productionDate' placeholder="Production Date" autocomplete="off"  > <br>
-          <input type="text" id="engine" name='engine' placeholder="Engine" autocomplete="off" > <br>
-          <input type="number" id="power" name='power' placeholder="Power" autocomplete="off" > <br>
-          <input type="number" id="price" name='price' placeholder="Price" autocomplete="off" > <br>
-          <input type="text" id="phone" name='phone' placeholder="Phone Number" autocomplete="off" > <br>
+          <input type="text" ngModel name='brand' placeholder="Brand" autocomplete="off"> <br>
+          <input type="text" ngModel name='model' placeholder="Model" autocomplete="off" > <br>
+          <input type="text" ngModel name='distance' placeholder="Distance" autocomplete="off" > <br>
+          <input type="text" ngModel name='year' placeholder="Production Date" autocomplete="off"  > <br>
+          <input type="text" ngModel name='engine' placeholder="Engine" autocomplete="off" > <br>
+          <input type="text" ngModel name='power' placeholder="Power" autocomplete="off" > <br>
+          <input type="text" ngModel name='price' placeholder="Price" autocomplete="off" > <br>
+          <input type="text" ngModel name='phone' placeholder="Phone Number" autocomplete="off" > <br>
 
           <label for="image">Image</label>
-          <input type="file" id="image" name='image'>
-          <button type="submit" class="pure-button pure-button-primary">Create</button>
+          <input type="file" ngModel id="image_url" name='image_url'>
+          <button type="submit"  id="add-form-close" class="pure-button pure-button-primary">Create</button>
   </form>
 </div>

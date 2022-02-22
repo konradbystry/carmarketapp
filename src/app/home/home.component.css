@@ -320,6 +320,16 @@ header.sticky {
   cursor: pointer;
 }
 
+.warn-button {
+  position: relative;
+  margin: 0 15px;
+  border: none;
+  background-color: rgb(255, 175, 1);
+  color: #f2f2f2;
+  padding: 9px 23px;
+  cursor: pointer;
+}
+
 .empty {
   margin-top: 14em;
   position: absolute;
@@ -348,4 +358,11 @@ header.sticky {
 
 .ad a:active {
   text-decoration: none;
+}
+
+.warn-button,
+.watch-button,
+.remove-button {
+  min-width: 8em;
+  margin-top: 5px;
 }
