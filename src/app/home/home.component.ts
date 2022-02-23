@@ -90,6 +90,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/edit', id]);
   }
 
+  public goToAd(id : number) : void{
+    this.router.navigate(['/ad', id]);
+  }
+
 
   public addWatches(userId : number, carId : number | undefined): void{
 

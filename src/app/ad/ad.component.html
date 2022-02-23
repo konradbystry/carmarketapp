@@ -6,20 +6,20 @@
 
   <div class="contentt">
       <div class="photoo">
-          <img src="../../assets/test-photo.jpg" alt="">
+          <img src="{{car?.imageUrl}}" alt="">
       </div>
       <div class="descriptionn">
-          <h2>test test</h2>
+          <h2>{{car?.brand}} {{car?.model}}</h2>
           <ul>
-              <li>test</li>
-              <li>test km</li>
-              <li>test</li>
-              <li>test horse power</li>
-              <li>123123123</li>
+              <li>{{car?.year}}</li>
+              <li>{{car?.distance}} km</li>
+              <li>{{car?.engine}}</li>
+              <li>{{car?.power}} horse power</li>
+              <li>{{car?.phone}}</li>
           </ul>
       </div>
       <div class="pricee">
-          <h2>100000 pln</h2>
+          <h2>{{car?.price}} pln</h2>
           <form action="">
               <button class="watch-button">watch</button>
           </form>

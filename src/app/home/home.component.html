@@ -16,7 +16,7 @@
 
 
         <div class="ad" *ngFor="let car of cars | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength}">
-          <a href="/ad" class="text-decoration-none">
+          <a (click)="goToAd(car.id)" class="text-decoration-none">
               <div class="content">
                   <div class="photo">
                       <img src="{{car.imageUrl}}" alt="">
