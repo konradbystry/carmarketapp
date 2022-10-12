@@ -1,4 +1,4 @@
-# Carmarketapp
+# Carmarketapp - frontend for jpdsi2-project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
